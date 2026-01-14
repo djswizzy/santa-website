@@ -1,7 +1,7 @@
 # Site settings
 title: Santa Greg of the Marshwalk
 description: 
-theme: architect@v0.2.0
+remote_theme: architect@v0.2.0
 url: ""
 baseurl: ""
 
@@ -10,6 +10,7 @@ markdown: kramdown
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
+  - jekyll-remote-theme
 
 # Exclude from processing
 exclude:
