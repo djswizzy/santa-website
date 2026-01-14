@@ -10,7 +10,7 @@ baseurl: ""
 url: ""
 
 # Contact Information
-email: santagregofthemarshwalk@gmail.com
+email: SantaGregofTheMarshwalk@gmail.com
 phone: "(732) 600-0464"
 facebook: "https://www.facebook.com/profile.php?id=100063673776268"
 location: "Murrells Inlet, SC"
@@ -29,11 +29,11 @@ gallery:
   - filename: santa-3.jpg
     caption: "Santa Greg is an animal lover!"
   - filename: santa-4.jpg
-    caption: "Community celebration"
+    caption: "Pet photos are always a hit"
   - filename: santa-5.jpg
-    caption: "Making spirits bright"
+    caption: "Small business is always on the nice list"
   - filename: santa-6.jpg
-    caption: "Holiday party fun"
+    caption: "Santa has upgraded from cookies this year!"
 
 # Exclude from processing
 exclude:

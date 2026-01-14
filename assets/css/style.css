@@ -409,7 +409,7 @@ section {
 
 /* Gallery Section */
 .gallery {
-  background: white;
+  background: var(--cream);
 }
 
 .gallery-grid {
