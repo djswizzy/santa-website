@@ -1,6 +1,8 @@
 # Site settings
 title: Santa Greg of the Marshwalk
 description: 
+theme: minima
+author: DJC
 url: ""
 baseurl: ""
 
