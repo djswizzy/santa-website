@@ -160,30 +160,24 @@ title: Santa Greg of the Marshwalk | Hireable Santa for Events
       <p>Ready to book Santa Greg for your event? Reach out today!</p>
     </div>
     <div class="contact-grid">
-      <div class="contact-card">
+      <a href="tel:{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}" class="contact-card">
         <i class="fas fa-phone"></i>
         <h3>Call or Text</h3>
-        <a href="tel:{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{ site.phone }}</a>
+        <span class="contact-info">{{ site.phone }}</span>
         <p>Available for inquiries & bookings</p>
-      </div>
-      <div class="contact-card">
+      </a>
+      <a href="mailto:{{ site.email }}" class="contact-card">
         <i class="fas fa-envelope"></i>
         <h3>Email</h3>
-        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <span class="contact-info">{{ site.email }}</span>
         <p>Send details about your event</p>
-      </div>
-      <div class="contact-card">
+      </a>
+      <a href="{{ site.facebook }}" target="_blank" rel="noopener" class="contact-card">
         <i class="fab fa-facebook"></i>
         <h3>Facebook</h3>
-        <a href="{{ site.facebook }}" target="_blank" rel="noopener">Visit Facebook Page</a>
+        <span class="contact-info">Visit Facebook Page</span>
         <p>Follow for updates & photos</p>
-      </div>
-      <div class="contact-card">
-        <i class="fas fa-map-marker-alt"></i>
-        <h3>Location</h3>
-        <span style="color: white; font-size: 1.1rem;">{{ site.location }}</span>
-        <p>Serving the Grand Strand & beyond</p>
-      </div>
+      </a>
     </div>
   </div>
 </section>

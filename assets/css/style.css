@@ -498,17 +498,27 @@ section {
 }
 
 .contact-card {
+  display: block;
   background: rgba(255,255,255,0.1);
   backdrop-filter: blur(10px);
   padding: 2.5rem;
   border-radius: 20px;
   text-align: center;
   transition: var(--transition);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .contact-card:hover {
   background: rgba(255,255,255,0.15);
   transform: translateY(-3px);
+  color: white;
+}
+
+.contact-info {
+  color: white;
+  font-size: 1.1rem;
+  word-break: break-word;
 }
 
 .contact-card i {
@@ -521,16 +531,6 @@ section {
   color: white;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
-}
-
-.contact-card a {
-  color: white;
-  font-size: 1.1rem;
-  word-break: break-word;
-}
-
-.contact-card a:hover {
-  color: var(--gold-light);
 }
 
 .contact-card p {
