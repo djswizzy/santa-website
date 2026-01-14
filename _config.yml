@@ -23,11 +23,11 @@ plugins:
 # Gallery images - add your image filenames here
 gallery:
   - filename: santa-1.jpg
-    caption: "Santa Greg spreading holiday cheer"
+    caption: "Santa Greg on Grand Strand Today"
   - filename: santa-2.jpg
-    caption: "Meeting the little ones"
+    caption: "Santa Greg loves christmas in July!"
   - filename: santa-3.jpg
-    caption: "Corporate event appearance"
+    caption: "Santa Greg is an animal lover!"
   - filename: santa-4.jpg
     caption: "Community celebration"
   - filename: santa-5.jpg
