@@ -1,6 +1,7 @@
 # Site settings
-title: Santa's Website
-description: Welcome to Santa's magical corner of the internet!
+title: Santa Greg of the Marshwalk
+description: 
+theme: architect@v0.2.0
 url: ""
 baseurl: ""
 
