@@ -1,0 +1,17 @@
+# Site settings
+title: Santa's Website
+description: Welcome to Santa's magical corner of the internet!
+url: ""
+baseurl: ""
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
