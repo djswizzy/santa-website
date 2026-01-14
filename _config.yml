@@ -1,0 +1,46 @@
+# Site settings
+title: Santa Greg of the Marshwalk
+tagline: "Bringing Holiday Magic to Your Events"
+description: >-
+  Santa Greg of the Marshwalk is a professional, hireable Santa Claus 
+  bringing holiday magic and joy to events, parties, and gatherings. 
+  Book Santa Greg for your next celebration!
+
+baseurl: ""
+url: ""
+
+# Contact Information
+email: santagregofthemarshwalk@gmail.com
+phone: "(555) 123-4567"
+facebook: "https://www.facebook.com/profile.php?id=100063673776268"
+
+# Build settings
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Gallery images - add your image filenames here
+gallery:
+  - filename: santa-1.jpg
+    caption: "Santa Greg spreading holiday cheer"
+  - filename: santa-2.jpg
+    caption: "Meeting the little ones"
+  - filename: santa-3.jpg
+    caption: "Corporate event appearance"
+  - filename: santa-4.jpg
+    caption: "Community celebration"
+  - filename: santa-5.jpg
+    caption: "Making spirits bright"
+  - filename: santa-6.jpg
+    caption: "Holiday party fun"
+
+# Exclude from processing
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/
+  - README.md

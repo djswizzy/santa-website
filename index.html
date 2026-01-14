@@ -1,0 +1,197 @@
+---
+layout: default
+title: Santa Greg of the Marshwalk | Hireable Santa for Events
+---
+
+<!-- Navigation -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="#" class="nav-logo">
+      <i class="fas fa-holly-berry"></i>
+      Santa Greg
+    </a>
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h1>{{ site.title }}</h1>
+    <p class="tagline">{{ site.tagline }}</p>
+    <p>Professional Santa Claus services for corporate events, private parties, community gatherings, and holiday celebrations. Let Santa Greg bring the magic of Christmas to your special occasion!</p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">
+        <i class="fas fa-calendar-check"></i>
+        Book Santa Greg
+      </a>
+      <a href="#gallery" class="btn btn-secondary">
+        <i class="fas fa-images"></i>
+        View Gallery
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="{{ '/assets/images/santa-greg-portrait.jpg' | relative_url }}" alt="Santa Greg of the Marshwalk" onerror="this.parentElement.innerHTML='<div class=\'gallery-placeholder\' style=\'aspect-ratio:4/3;border-radius:20px;\'><i class=\'fas fa-user-circle\'></i><span>Portrait Photo</span></div>'">
+      </div>
+      <div class="about-text">
+        <h2>Meet Santa Greg</h2>
+        <p>With a genuine love for spreading holiday cheer, Santa Greg of the Marshwalk has been bringing smiles to faces young and old for years. His authentic portrayal of Santa Claus creates magical moments that families cherish forever.</p>
+        <p>Whether it's a corporate holiday party, a neighborhood gathering, a school event, or an intimate family celebration, Santa Greg brings warmth, joy, and the true spirit of Christmas to every appearance.</p>
+        <ul class="about-features">
+          <li><i class="fas fa-check-circle"></i> Professional & Experienced</li>
+          <li><i class="fas fa-check-circle"></i> Authentic Santa Attire</li>
+          <li><i class="fas fa-check-circle"></i> Great with Children</li>
+          <li><i class="fas fa-check-circle"></i> Customizable Appearances</li>
+          <li><i class="fas fa-check-circle"></i> Background Checked</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-gift"></i> Services</h2>
+      <p>Santa Greg is available for a variety of holiday events and occasions</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <i class="fas fa-building"></i>
+        <h3>Corporate Events</h3>
+        <p>Make your company holiday party unforgettable with a visit from Santa. Perfect for employee appreciation, client events, and office celebrations.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-home"></i>
+        <h3>Private Parties</h3>
+        <p>Surprise your family and guests with a special Santa visit. Create lasting memories at your home holiday gathering or celebration.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-users"></i>
+        <h3>Community Events</h3>
+        <p>Bring the community together with Santa at parades, tree lightings, festivals, and neighborhood celebrations.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-school"></i>
+        <h3>Schools & Daycares</h3>
+        <p>Give children a magical experience with a classroom or assembly visit from Santa Claus.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-store"></i>
+        <h3>Retail & Promotions</h3>
+        <p>Attract customers and create buzz with Santa appearances at your store, mall, or promotional event.</p>
+      </div>
+      <div class="service-card">
+        <i class="fas fa-camera"></i>
+        <h3>Photo Sessions</h3>
+        <p>Professional Santa photos for families, pets, or special keepsake portraits during the holiday season.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Gallery Section -->
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-camera-retro"></i> Gallery</h2>
+      <p>Moments of holiday magic captured through the years</p>
+    </div>
+    <div class="gallery-grid">
+      {% for image in site.gallery %}
+      <div class="gallery-item" onclick="openLightbox('{{ '/assets/images/gallery/' | append: image.filename | relative_url }}')">
+        <img src="{{ '/assets/images/gallery/' | append: image.filename | relative_url }}" alt="{{ image.caption }}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="gallery-placeholder" style="display: none;">
+          <i class="fas fa-image"></i>
+          <span>{{ image.caption }}</span>
+        </div>
+        <div class="overlay">
+          <p>{{ image.caption }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-envelope"></i> Get in Touch</h2>
+      <p>Ready to book Santa Greg for your event? Reach out today!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-phone"></i>
+        <h3>Call or Text</h3>
+        <a href="tel:{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}">{{ site.phone }}</a>
+        <p>Available for inquiries & bookings</p>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        <p>Send details about your event</p>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-facebook"></i>
+        <h3>Facebook</h3>
+        <a href="{{ site.facebook }}" target="_blank" rel="noopener">Visit Facebook Page</a>
+        <p>Follow for updates & photos</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta">
+  <div class="container">
+    <h2><i class="fas fa-sleigh"></i> Make Your Event Magical!</h2>
+    <p>Book Santa Greg today and give your guests an unforgettable holiday experience.</p>
+    <a href="mailto:{{ site.email }}?subject=Santa%20Booking%20Inquiry" class="btn btn-secondary">
+      <i class="fas fa-paper-plane"></i>
+      Send Booking Request
+    </a>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-social">
+      <a href="{{ site.facebook }}" target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fab fa-facebook"></i>
+      </a>
+      <a href="mailto:{{ site.email }}" aria-label="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="tel:{{ site.phone | remove: '(' | remove: ')' | remove: ' ' | remove: '-' }}" aria-label="Phone">
+        <i class="fas fa-phone"></i>
+      </a>
+    </div>
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}. Made with <span class="heart"><i class="fas fa-heart"></i></span> and holiday spirit.</p>
+  </div>
+</footer>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <span class="lightbox-close">&times;</span>
+  <img src="" alt="Gallery image" id="lightbox-img">
+</div>
