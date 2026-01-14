@@ -7,7 +7,12 @@ description: >-
   Book Santa Greg for your next celebration!
 
 baseurl: ""
-url: ""
+url: "https://santagregofthemarshwalk.com"  # Your actual domain
+
+# Social Sharing Image (shows when link is shared on Facebook, Twitter, etc.)
+# Use a landscape image, ideally 1200x630 pixels
+og_image: /assets/images/santa-greg-share.jpg
+
 
 # Contact Information
 email: SantaGregofTheMarshwalk@gmail.com
