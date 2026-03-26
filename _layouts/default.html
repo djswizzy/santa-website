@@ -25,6 +25,13 @@
 <body>
   {{ content }}
   
+  <script>
+    window.SANTA_CONFIG = {
+      calendarId: "{{ site.google_calendar_id }}",
+      apiKey: "{{ site.google_api_key }}",
+      maxEvents: {{ site.google_calendar_max_events | default: 10 }}
+    };
+  </script>
   <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
 </body>
 </html>

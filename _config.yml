@@ -20,6 +20,13 @@ phone: "(732) 600-0464"
 facebook: "https://www.facebook.com/profile.php?id=100063673776268"
 location: "Murrells Inlet, SC"
 
+# Google Calendar - set these to pull upcoming events
+# Calendar ID: found in Google Calendar > Settings > Calendar ID (looks like xxx@group.calendar.google.com)
+# API Key: create at https://console.cloud.google.com/apis/credentials (enable "Google Calendar API")
+google_calendar_id: "santagregofthemarshwalk@gmail.com"
+google_api_key: "AIzaSyAqcmV2zwHQ2WGkfypRxhHPVMVeDokZMcw"
+google_calendar_max_events: 10
+
 # Build settings
 plugins:
   - jekyll-feed
