@@ -25,7 +25,7 @@ location: "Murrells Inlet, SC"
 # API Key: create at https://console.cloud.google.com/apis/credentials (enable "Google Calendar API")
 google_calendar_id: "santagregofthemarshwalk@gmail.com"
 google_api_key: "AIzaSyAqcmV2zwHQ2WGkfypRxhHPVMVeDokZMcw"
-google_calendar_max_events: 10
+google_calendar_max_events: 20
 
 # Build settings
 plugins:
