@@ -15,7 +15,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /assets/images/cover.jpeg
+      image: /assets/images/santa-greg-portrait.jpg
 
 
 # Contact Information
