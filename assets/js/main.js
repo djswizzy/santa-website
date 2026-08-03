@@ -109,16 +109,25 @@ function renderEvents(container, events, config) {
 
   var html = '';
   var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  var monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
   var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var currentMonthKey = '';
 
   events.forEach(function(event) {
     var startStr = event.start.dateTime || event.start.date;
     var start = new Date(startStr);
     var isAllDay = !event.start.dateTime;
+    var monthKey = start.getFullYear() + '-' + start.getMonth();
 
     var month = months[start.getMonth()];
     var day = start.getDate();
     var weekday = days[start.getDay()];
+
+    if (monthKey !== currentMonthKey) {
+      html += '<h3 class="events-month">' +
+        monthNames[start.getMonth()] + ' ' + start.getFullYear() + '</h3>';
+      currentMonthKey = monthKey;
+    }
 
     var timeStr = '';
     if (!isAllDay) {
@@ -135,20 +144,24 @@ function renderEvents(container, events, config) {
 
     var eventUrl = event.htmlLink || '#';
 
-    html += '<a class="event-item" href="' + escapeAttr(eventUrl) + '" target="_blank" rel="noopener">';
+    html += '<article class="event-item">';
     html += '<div class="event-date-badge">';
     html += '<span class="event-month">' + month + '</span>';
     html += '<span class="event-day">' + day + '</span>';
     html += '<span class="event-weekday">' + weekday + '</span>';
     html += '</div>';
     html += '<div class="event-details">';
-    html += '<div class="event-title">' + escapeHtml(event.summary || 'Untitled Event') + '</div>';
+    html += '<a class="event-title" href="' + escapeAttr(eventUrl) + '" target="_blank" rel="noopener">' +
+      escapeHtml(event.summary || 'Untitled Event') + '</a>';
     html += '<div class="event-meta">';
     html += '<span><i class="fas fa-clock"></i> ' + escapeHtml(timeStr) + '</span>';
     if (location) {
       html += '<span><i class="fas fa-map-marker-alt"></i> ' + escapeHtml(location) + '</span>';
+      html += '<a class="event-directions" href="https://www.google.com/maps/search/?api=1&query=' +
+        encodeURIComponent(location) + '" target="_blank" rel="noopener">' +
+        '<i class="fas fa-diamond-turn-right"></i> Directions</a>';
     }
-    html += '</div></div></a>';
+    html += '</div></div></article>';
   });
 
   var calendarUrl = 'https://calendar.google.com/calendar/embed?src=' +
