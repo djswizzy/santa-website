@@ -156,21 +156,36 @@ h1, h2, h3, h4 {
   overflow: hidden;
 }
 
-.hero::before {
+.hero::before,
+.hero::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='2' fill='rgba(255,255,255,0.1)'/%3E%3C/svg%3E") repeat;
-  background-size: 50px 50px;
-  animation: snow 20s linear infinite;
+  inset: 0;
+  pointer-events: none;
+  background-repeat: repeat;
 }
 
-@keyframes snow {
+.hero::before {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 240 240'%3E%3Ccircle cx='18' cy='32' r='2.2' fill='rgba(255,255,255,0.45)'/%3E%3Ccircle cx='72' cy='18' r='1.4' fill='rgba(255,255,255,0.28)'/%3E%3Ccircle cx='126' cy='54' r='3' fill='rgba(255,255,255,0.38)'/%3E%3Ccircle cx='198' cy='28' r='1.8' fill='rgba(255,255,255,0.32)'/%3E%3Ccircle cx='42' cy='98' r='1.2' fill='rgba(255,255,255,0.25)'/%3E%3Ccircle cx='96' cy='132' r='2.6' fill='rgba(255,255,255,0.42)'/%3E%3Ccircle cx='164' cy='88' r='1.5' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='220' cy='118' r='2' fill='rgba(255,255,255,0.36)'/%3E%3Ccircle cx='28' cy='176' r='1.7' fill='rgba(255,255,255,0.28)'/%3E%3Ccircle cx='84' cy='208' r='2.4' fill='rgba(255,255,255,0.4)'/%3E%3Ccircle cx='148' cy='168' r='1.3' fill='rgba(255,255,255,0.26)'/%3E%3Ccircle cx='206' cy='198' r='2.8' fill='rgba(255,255,255,0.34)'/%3E%3C/svg%3E");
+  background-size: 240px 240px;
+  animation: snow-drift 28s linear infinite;
+}
+
+.hero::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 180'%3E%3Ccircle cx='24' cy='44' r='1.1' fill='rgba(255,255,255,0.22)'/%3E%3Ccircle cx='68' cy='16' r='1.8' fill='rgba(255,255,255,0.3)'/%3E%3Ccircle cx='118' cy='62' r='1.3' fill='rgba(255,255,255,0.24)'/%3E%3Ccircle cx='156' cy='28' r='2.1' fill='rgba(255,255,255,0.34)'/%3E%3Ccircle cx='36' cy='112' r='1.5' fill='rgba(255,255,255,0.26)'/%3E%3Ccircle cx='92' cy='148' r='1' fill='rgba(255,255,255,0.2)'/%3E%3Ccircle cx='142' cy='104' r='1.9' fill='rgba(255,255,255,0.28)'/%3E%3Ccircle cx='54' cy='168' r='1.4' fill='rgba(255,255,255,0.25)'/%3E%3C/svg%3E");
+  background-size: 180px 180px;
+  opacity: 0.85;
+  animation: snow-drift-slow 42s linear infinite;
+}
+
+@keyframes snow-drift {
   0% { background-position: 0 0; }
-  100% { background-position: 50px 100px; }
+  100% { background-position: 40px 240px; }
+}
+
+@keyframes snow-drift-slow {
+  0% { background-position: 20px -40px; }
+  100% { background-position: -30px 140px; }
 }
 
 .hero-content {
