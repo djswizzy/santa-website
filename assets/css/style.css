@@ -420,16 +420,51 @@ section {
   gap: 1rem;
 }
 
-.events-month {
-  margin: 1.5rem 0 0.25rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--gold-light);
-  color: var(--christmas-green);
-  font-size: 1.6rem;
+.events-month-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 0;
 }
 
-.events-month:first-child {
-  margin-top: 0;
+.events-month-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border: 0;
+  border-bottom: 2px solid var(--gold-light);
+  background: transparent;
+  color: var(--christmas-green);
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+}
+
+.events-month-toggle:hover {
+  color: var(--christmas-green-light);
+}
+
+.events-month-toggle i {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.events-month-toggle[aria-expanded="false"] i {
+  transform: rotate(-90deg);
+}
+
+.events-month-items {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.events-month-items[hidden] {
+  display: none;
 }
 
 .events-loading {
@@ -558,6 +593,10 @@ section {
   opacity: 0.4;
   margin-bottom: 1rem;
   display: block;
+}
+
+.events-calendar-btn {
+  margin-top: 1.25rem;
 }
 
 .events-footer {

@@ -124,8 +124,16 @@ function renderEvents(container, events, config) {
     var weekday = days[start.getDay()];
 
     if (monthKey !== currentMonthKey) {
-      html += '<h3 class="events-month">' +
-        monthNames[start.getMonth()] + ' ' + start.getFullYear() + '</h3>';
+      if (currentMonthKey) {
+        html += '</div></section>';
+      }
+      var monthId = 'events-month-' + monthKey;
+      html += '<section class="events-month-group">';
+      html += '<button class="events-month-toggle" type="button" aria-expanded="true" aria-controls="' +
+        monthId + '">';
+      html += '<span>' + monthNames[start.getMonth()] + ' ' + start.getFullYear() + '</span>';
+      html += '<i class="fas fa-chevron-down" aria-hidden="true"></i></button>';
+      html += '<div class="events-month-items" id="' + monthId + '">';
       currentMonthKey = monthKey;
     }
 
@@ -163,6 +171,7 @@ function renderEvents(container, events, config) {
     }
     html += '</div></div></article>';
   });
+  html += '</div></section>';
 
   var calendarUrl = 'https://calendar.google.com/calendar/embed?src=' +
     encodeURIComponent(config.calendarId);
@@ -171,6 +180,15 @@ function renderEvents(container, events, config) {
   html += '<i class="fas fa-calendar"></i> View Full Calendar</a></div>';
 
   container.innerHTML = html;
+
+  container.querySelectorAll('.events-month-toggle').forEach(function(button) {
+    button.addEventListener('click', function() {
+      var monthItems = document.getElementById(button.getAttribute('aria-controls'));
+      var isExpanded = button.getAttribute('aria-expanded') === 'true';
+      button.setAttribute('aria-expanded', String(!isExpanded));
+      monthItems.hidden = isExpanded;
+    });
+  });
 }
 
 function escapeHtml(str) {

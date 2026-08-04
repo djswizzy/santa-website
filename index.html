@@ -14,8 +14,8 @@ title: Santa Greg of the Marshwalk
       <i class="fas fa-bars"></i>
     </button>
     <ul class="nav-links">
-      <li><a href="#events">Schedule</a></li>
       <li><a href="#about">About</a></li>
+      <li><a href="#events">Schedule</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#contact">Contact</a></li>
@@ -38,26 +38,10 @@ title: Santa Greg of the Marshwalk
         <i class="fas fa-calendar-days"></i>
         View Schedule
       </a>
-      <a href="#gallery" class="btn btn-secondary">
+      <a href="#featured" class="btn btn-secondary">
         <i class="fas fa-images"></i>
         View Gallery
       </a>
-    </div>
-  </div>
-</section>
-
-<!-- Events Section -->
-<section class="events" id="events">
-  <div class="container">
-    <div class="section-header">
-      <h2><i class="fas fa-calendar-star"></i> Santa Greg's Schedule</h2>
-      <p>Find Santa Greg at these upcoming public appearances.</p>
-    </div>
-    <div class="events-list" id="events-list">
-      <div class="events-loading">
-        <i class="fas fa-spinner fa-spin"></i>
-        <p>Loading events...</p>
-      </div>
     </div>
   </div>
 </section>
@@ -77,6 +61,25 @@ title: Santa Greg of the Marshwalk
           <li><i class="fas fa-check-circle"></i> Great with Children & Pets</li>
           <li><i class="fas fa-check-circle"></i> Available to Travel (via Sleigh!)</li>
         </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Events Section -->
+<section class="events" id="events">
+  <div class="container">
+    <div class="section-header">
+      <h2><i class="fas fa-calendar-star"></i> Santa Greg's Schedule</h2>
+      <p>Find Santa Greg at these upcoming public appearances.</p>
+      <a href="https://calendar.google.com/calendar/embed?src={{ site.google_calendar_id | url_encode }}" target="_blank" rel="noopener" class="btn btn-primary events-calendar-btn">
+        <i class="fas fa-calendar"></i> View Full Calendar
+      </a>
+    </div>
+    <div class="events-list" id="events-list">
+      <div class="events-loading">
+        <i class="fas fa-spinner fa-spin"></i>
+        <p>Loading events...</p>
       </div>
     </div>
   </div>
